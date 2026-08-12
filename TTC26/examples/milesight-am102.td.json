@@ -61,7 +61,7 @@
           "op": ["readproperty", "observeproperty"],
           "lorav:tag": [3, 103],
           "lorav:type": "xsd:short",
-          "lorav:mostSignificantByte": false,
+          "lorav:endian": "little",
           "lorav:divisor": 10
         }
       ]

@@ -66,7 +66,6 @@
           "op": ["readproperty", "observeproperty"],
           "lorav:byteOffset": 1,
           "lorav:type": "xsd:short",
-          "lorav:mostSignificantByte": true,
           "lorav:multiplier": 0.1
         }
       ]

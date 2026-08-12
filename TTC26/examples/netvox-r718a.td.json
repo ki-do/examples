@@ -106,7 +106,6 @@
           "lorav:slot": 2,
           "lorav:byteOffset": 4,
           "lorav:type": "xsd:short",
-          "lorav:mostSignificantByte": true,
           "lorav:divisor": 100
         }
       ]
@@ -128,7 +127,6 @@
           "lorav:slot": 3,
           "lorav:byteOffset": 6,
           "lorav:type": "xsd:unsignedShort",
-          "lorav:mostSignificantByte": true,
           "lorav:divisor": 100
         }
       ]

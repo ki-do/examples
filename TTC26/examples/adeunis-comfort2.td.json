@@ -43,8 +43,7 @@
             "observeproperty"
           ],
           "lorav:byteOffset": 0,
-          "lorav:type": "u8",
-          "lorav:mostSignificantByte": true
+          "lorav:type": "u8"
         }
       ]
     },
@@ -60,8 +59,7 @@
             "observeproperty"
           ],
           "lorav:byteOffset": 1,
-          "lorav:type": "u8",
-          "lorav:mostSignificantByte": true
+          "lorav:type": "u8"
         }
       ]
     },
@@ -79,7 +77,6 @@
           ],
           "lorav:byteOffset": 2,
           "lorav:type": "s16",
-          "lorav:mostSignificantByte": true,
           "lorav:divisor": 10
         }
       ]
@@ -97,8 +94,7 @@
             "observeproperty"
           ],
           "lorav:byteOffset": 4,
-          "lorav:type": "u8",
-          "lorav:mostSignificantByte": true
+          "lorav:type": "u8"
         }
       ]
     }

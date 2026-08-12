@@ -45,8 +45,7 @@
             1,
             117
           ],
-          "lorav:type": "u8",
-          "lorav:mostSignificantByte": false
+          "lorav:type": "u8"
         }
       ]
     },
@@ -66,7 +65,7 @@
             103
           ],
           "lorav:type": "s16",
-          "lorav:mostSignificantByte": false,
+          "lorav:endian": "little",
           "lorav:divisor": 10
         }
       ]
@@ -87,7 +86,6 @@
             104
           ],
           "lorav:type": "u8",
-          "lorav:mostSignificantByte": false,
           "lorav:divisor": 2
         }
       ]
@@ -108,7 +106,6 @@
             0
           ],
           "lorav:type": "u8",
-          "lorav:mostSignificantByte": false,
           "lorav:enum": {
             "0": "normal",
             "1": "leak"
