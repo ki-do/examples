@@ -1,7 +1,10 @@
 {
   "@context": [
     "https://www.w3.org/2022/wot/td/v1.1",
-    { "lorav": "https://www.w3.org/2024/wot/lorawan#" }
+    {
+      "lorav": "https://www.w3.org/2024/wot/lorawan#",
+      "schema": "https://schema.org/"
+    }
   ],
   "@type": "Thing",
   "id": "urn:dev:milesight:am102",
@@ -17,69 +20,91 @@
   },
   "security": "otaa_sc",
   "base": "lorawan://A84041B98D5CB233/{appKey}/device",
-
-  "lorav:endDeviceId": "milesight-am102-01",
   "lorav:devEUI": "A84041B98D5CB233",
   "lorav:joinEUI": "0000000000000001",
   "lorav:macVersion": "1.0.3",
-  "lorav:brand": "Milesight",
-  "lorav:model": "AM102",
-  "lorav:hardwareVersion": "1.0",
-  "lorav:softwareVersion": "1.7",
+  "schema:brand": "Milesight",
+  "schema:model": "AM102",
   "lorav:region": "EU868",
   "lorav:frequencyPlan": "EU_863_870",
-
   "lorav:payloadLayout": "ctv",
   "lorav:tagFields": [
-    { "name": "channel_id", "type": "u8" },
-    { "name": "channel_type", "type": "u8" }
+    {
+      "name": "channel_id",
+      "type": "u8"
+    },
+    {
+      "name": "channel_type",
+      "type": "u8"
+    }
   ],
-
-  "properties": {
+  "events": {
     "battery": {
-      "type": "integer",
-      "unit": "%",
-      "readOnly": true,
-      "observable": true,
+      "data": {
+        "type": "integer",
+        "unit": "%"
+      },
       "forms": [
         {
           "href": "ctv",
-          "op": ["readproperty", "observeproperty"],
-          "lorav:tag": [1, 117],
-          "lorav:type": "xsd:unsignedByte"
+          "op": [
+            "subscribeevent",
+            "unsubscribeevent"
+          ],
+          "lorav:tag": [
+            1,
+            117
+          ],
+          "lorav:wireType": "xsd:unsignedByte"
         }
       ]
     },
     "temperature": {
-      "type": "number",
-      "unit": "Cel",
-      "readOnly": true,
-      "observable": true,
+      "data": {
+        "type": "number",
+        "unit": "Cel"
+      },
       "forms": [
         {
           "href": "ctv",
-          "op": ["readproperty", "observeproperty"],
-          "lorav:tag": [3, 103],
-          "lorav:type": "xsd:short",
+          "op": [
+            "subscribeevent",
+            "unsubscribeevent"
+          ],
+          "lorav:tag": [
+            3,
+            103
+          ],
+          "lorav:wireType": "xsd:short",
           "lorav:endian": "little",
           "lorav:divisor": 10
         }
       ]
     },
     "humidity": {
-      "type": "number",
-      "unit": "%RH",
-      "readOnly": true,
-      "observable": true,
+      "data": {
+        "type": "number",
+        "unit": "%RH"
+      },
       "forms": [
         {
           "href": "ctv",
-          "op": ["readproperty", "observeproperty"],
-          "lorav:tag": [4, 104],
-          "lorav:type": "xsd:unsignedByte",
+          "op": [
+            "subscribeevent",
+            "unsubscribeevent"
+          ],
+          "lorav:tag": [
+            4,
+            104
+          ],
+          "lorav:wireType": "xsd:unsignedByte",
           "lorav:divisor": 2
         }
       ]
     }
+  },
+  "version": {
+    "model": "1.0",
+    "instance": "1.7"
   }
 }
