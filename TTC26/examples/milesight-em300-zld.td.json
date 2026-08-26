@@ -22,8 +22,10 @@
   "lorav:devEUI": "0000000000000000",
   "lorav:joinEUI": "0000000000000000",
   "lorav:macVersion": "1.0.2",
-  "schema:brand": "Milesight",
-  "schema:model": "EM300-ZLD",
+  "schema:manufacturer": "Milesight",
+  "schema:mpn": "EM300-ZLD",
+  "schema:version": "1",
+  "schema:softwareVersion": "1",
   "lorav:region": "EU868",
   "lorav:frequencyPlan": "EU_863_870_TTN",
   "lorav:payloadLayout": "tlv",
@@ -91,15 +93,9 @@
     "leakage_status": {
       "data": {
         "type": "string",
-        "oneOf": [
-          {
-            "const": 0,
-            "title": "normal"
-          },
-          {
-            "const": 1,
-            "title": "leak"
-          }
+        "enum": [
+          "normal",
+          "leak"
         ]
       },
       "forms": [
@@ -113,7 +109,17 @@
             5,
             0
           ],
-          "lorav:wireType": "u8"
+          "lorav:wireType": "u8",
+          "lorav:valueMap": [
+            {
+              "wireValue": 0,
+              "value": "normal"
+            },
+            {
+              "wireValue": 1,
+              "value": "leak"
+            }
+          ]
         }
       ]
     }
@@ -127,9 +133,5 @@
       "name": "channel_type",
       "type": "u8"
     }
-  ],
-  "version": {
-    "model": "1",
-    "instance": "1"
-  }
+  ]
 }
