@@ -11,7 +11,7 @@ The proxy script acts as a bridge. It consumes the local Modbus device's Thing D
 2.  Ensure you have a running Modbus device (or simulator) and its corresponding `thing-td.json`.
 3.  Run the proxy script (requires ModbusClient from https://github.com/ki-do/wotpy/tree/ttc/wotpy/protocols/modbus):
     ```bash
-    python zenoh_proxy.py --source-td thing-td.json --router tcp/localhost:7447
+    python3 zenoh_proxy.py --source-td thing-td.json --router tcp/localhost:7447
     ```
 	You will see the generated Northbound TD printed in your terminal.
 
@@ -19,7 +19,7 @@ Once the proxy is active, the Modbus data is available on the Zenoh network. You
 
 4.  Run the `z_get` command:
     ```bash
-    z_get.exe -e tcp/localhost:7447 -s "wotpy/property/requests/modbuszenohproxy/integer-property"
+    z_get -e tcp/localhost:7447 -s "wotpy/property/requests/modbuszenohproxy/integer-property"
     ```
 
 5.  Expected Output:
@@ -35,5 +35,5 @@ Once the proxy is active, the Modbus data is available on the Zenoh network. You
 the dashboard sitting on top of zenoh can be started by simply running:
 
 ```bash
-python dashboard.py
+python3 dashboard.py
 ```
